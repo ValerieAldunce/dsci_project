@@ -21,14 +21,14 @@ disease_data <- heart_disease |>
 head(disease_data, n = 9)
 
 #Clean and wrangle your data into a tidy format
-    #make column of disease presence binary (by making all values bigger than 1 equal to 1)
+#make column of disease presence binary (by making all values bigger than 1 equal to 1)
 disease_data ["disease_presence"][disease_data["disease_presence"] == 2] <- "1"
 disease_data ["disease_presence"][disease_data["disease_presence"] == 3] <- "1"
 disease_data ["disease_presence"][disease_data["disease_presence"] == 4] <- "1"
 disease_data ["disease_presence"][disease_data["disease_presence"] == 5] <- "1"
     head(disease_data, n = 9)    
     
-    #split data into training and testing so we can use training data seperatly
+#split data into training and testing so we can use training data seperatly
 disease_split <- initial_split(disease_data, prop = 0.75, strata = disease_presence)  
 disease_training <- training(disease_split)   
 disease_testing <- testing(disease_split)
