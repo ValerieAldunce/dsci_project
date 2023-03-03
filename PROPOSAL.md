@@ -1,8 +1,4 @@
-# Project Proposal by Anais Dunbar, Valerie ...
-
-
-
-Title: Analysis of Heart Disease Data to Predict Likelihood of Disease in an Individual.
+# Analysis of Heart Disease Data to Predict Likelihood of Disease in an Individual.
 
 
 # Introduction
@@ -93,12 +89,11 @@ These three graphs help us to visulalise the distribution of patient data and al
 
 <!-- #region -->
 # Method
-To analyse this data we will...
-
 We will use the variables age, cholesterol level, and blood pressure level because they are all known factors in the likelihood of an individual to develope heart disease. The older a patient is the higher the risk of heart disease becomes especially above the age of 65. The higher a patients cholesterol levels, the likely it is that thier arteries can get damaged and cloged which can result in heart disease. Similarly, if patients have high blood sugar levels, they are more likely to have damaged blood vessels and nerves that control their heart, which increases the risk of heart disease. 
 
 Sources: https://memorialhermann.org/services/specialties/heart-and-vascular/healthy-living/education/heart-disease-and-age , https://familyheart.org/cholesterol-is-key , https://www.cdc.gov/diabetes/library/features/diabetes-and-heart.html
 
+To analyse this data we will classify it. First we will 
 One way we will visualize the results ... 
 
 
