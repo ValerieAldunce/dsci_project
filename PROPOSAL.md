@@ -87,19 +87,21 @@ disease.cholesterol_plot
 
 These three graphs help us to visulalise the distribution of patient data and allows us to compare the ages , cholesterol levels and blood sugar levels of individulas with and without a diagnosis for heart disease. 
 
-<!-- #region -->
+
 # Method
 We will use the variables age, cholesterol level, and blood pressure level because they are all known factors in the likelihood of an individual to develope heart disease. The older a patient is the higher the risk of heart disease becomes especially above the age of 65. The higher a patients cholesterol levels, the likely it is that thier arteries can get damaged and cloged which can result in heart disease. Similarly, if patients have high blood sugar levels, they are more likely to have damaged blood vessels and nerves that control their heart, which increases the risk of heart disease. 
 
 Sources: https://memorialhermann.org/services/specialties/heart-and-vascular/healthy-living/education/heart-disease-and-age , https://familyheart.org/cholesterol-is-key , https://www.cdc.gov/diabetes/library/features/diabetes-and-heart.html
 
-To analyse this data we will classify it. First we will 
-One way we will visualize the results ... 
+Using the data from above that we have loaded into R, we can now conduct our analyses by forming 3 main plots: age v.s. presence of heart disease, cholesterol levels v.s. presence of heart disease, and blood sugar levels v.s. presence of heart disease. These plots will have to be separated into something such as facet grids to factor in things such as sex, whether or not the patient has angina, thalach (maximum heart rate achieved), etc. Using the data, we will form scatterplots to give us a clear visualization of any common trends. 
 
+To analyse this data we will preprocess the data and make it suitable for use in a classifier, so that we can use our observed data to make predictions. First we will ... 
+
+One way we will visualize the results ... 
 
 (Explain how you will conduct either your data analysis
 Describe at least one way that you will visualize the results)
-<!-- #endregion -->
+
 
 # Expected Outcome/Significance
 What do you expect to find?
