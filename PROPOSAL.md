@@ -1,11 +1,15 @@
-# dsci_project
+# Project Proposal by Anais Dunbar, Valerie ...
 
 
 
 Title: Analysis of Heart Disease Data to Predict Likelihood of Disease in an Individual.
 
 
-Introduction: Heart disease is the second most common cause of death in Canada. Coronary artery disease is one of the most prevalent kind of heart disease and can result in a heart attack. It has been proven that lifestyle modifications and, in certain situations, medication, can significantly lower your chance for developing heart disease. In this analysis we will aim to answer the question: what factors can help us predict whether an individual will have heart disease? To answer this question we will be using a heart disease dataset that has information on 303 patients with 14 columns containing data about different medical information. The class we want to predict is wether or not heart disease is present in an individual based on evaluating three predictors: cholesterol levels, blood sugar levels and age, which are all known factors that effect the probability of a patient being diagnosed with heart disease.
+# Introduction
+Heart disease is the second most common cause of death in Canada. Coronary artery disease is one of the most prevalent kind of heart disease and can result in a heart attack. It has been proven that lifestyle modifications and, in certain situations, medication, can significantly lower your chance for developing heart disease. In this analysis we will aim to answer the question: what factors can help us predict whether an individual will have heart disease? To answer this question we will be using a heart disease dataset that has information on 303 patients with 14 columns containing data about different medical information. The class we want to predict is wether or not heart disease is present in an individual based on evaluating three predictors: cholesterol levels, blood sugar levels and age, which are all known factors that effect the probability of a patient being diagnosed with heart disease.
+
+
+# Exploratory Data Analysis
 
 ```R
 #Demonstrate that the dataset can be read from the web into R
@@ -46,11 +50,11 @@ head(disease_data, n = 9)
 ```R
 #Clean and wrangle your data into a tidy format
     #make column of disease presence binary (by making all values bigger than 1 equal to 1)
-#? make 2=1
-#? make 3=1
-#? make 4=1
-#? make 5=1
-#    head(disease_data, n = 9)    
+disease_data ["disease_presence"][disease_data["disease_presence"] == 2] <- "1"
+disease_data ["disease_presence"][disease_data["disease_presence"] == 3] <- "1"
+disease_data ["disease_presence"][disease_data["disease_presence"] == 4] <- "1"
+disease_data ["disease_presence"][disease_data["disease_presence"] == 5] <- "1"
+    head(disease_data, n = 9)    
 
     #split data into training and testing so we can use training data seperatly
 disease_split <- initial_split(disease_data, prop = 0.75, strata = disease_presence)  
@@ -95,12 +99,24 @@ disease.cholesterol_plot
 ```
 
 <!-- #region -->
-Method:
-Create a knn model of the training data
+# Method
+To analyse this data we will...
+
+We will use the variables age, cholesterol level, and blood pressure level because they are all known factors in the likelihood of an individual to develope heart disease. The older a patient is the higher the risk of heart disease becomes especially above the age of 65. The higher a patients cholesterol levels, the likely it is that thier arteries can get damaged and cloged which can result in heart disease. Similarly, if patients have high blood sugar levels, they are more likely to have damaged blood vessels and nerves that control their heart, which increases the risk of heart disease. 
+
+Sources: https://memorialhermann.org/services/specialties/heart-and-vascular/healthy-living/education/heart-disease-and-age , https://familyheart.org/cholesterol-is-key , https://www.cdc.gov/diabetes/library/features/diabetes-and-heart.html
+
+One way we will visualize the results ... 
 
 
-Expected Outcome/Significance:
+(Explain how you will conduct either your data analysis
+Describe at least one way that you will visualize the results)
 <!-- #endregion -->
+
+# Expected Outcome/Significance
+What do you expect to find?
+What impact could such findings have?
+What future questions could this lead to?
 
 ```R
 
