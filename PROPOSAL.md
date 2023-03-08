@@ -93,11 +93,17 @@ We will use the variables age, cholesterol level, and blood pressure level becau
 
 Sources: https://memorialhermann.org/services/specialties/heart-and-vascular/healthy-living/education/heart-disease-and-age , https://familyheart.org/cholesterol-is-key , https://www.cdc.gov/diabetes/library/features/diabetes-and-heart.html
 
-Using the data from above that we have loaded into R, we can now conduct our analyses by forming 3 main plots: age v.s. presence of heart disease, cholesterol levels v.s. presence of heart disease, and blood sugar levels v.s. presence of heart disease. These plots will have to be separated into something such as facet grids to factor in things such as sex, whether or not the patient has angina, thalach (maximum heart rate achieved), etc. Using the data, we will form scatterplots to give us a clear visualization of any common trends. 
+To analyse this data we will perform classification, following these steps:
 
-To analyse this data we will preprocess the data and make it suitable for use in a classifier, so that we can use our observed data to make predictions. First we will ... 
+- 
+- 
+- 
+- 
 
-As stated above, we plan to visualize the results by placing each variable on a graph against presence of heart disease (which will be on the y-axis), implementing any significant factors in each graph and tidying it up to make finding any patterns much easier.
+(Explain how you will conduct either your data analysis
+Describe at least one way that you will visualize the results)
+
+"Using the data from above that we have loaded into R, we can now conduct our analyses by forming 3 main plots: age v.s. presence of heart disease, cholesterol levels v.s. presence of heart disease, and blood sugar levels v.s. presence of heart disease. These plots will have to be separated into something such as facet grids to factor in variables such as sex, whether or not the patient has angina, thalach (maximum heart rate achieved), etc. Using the data, we will form scatterplots to give us a clear visualization of any common trends. As stated above, we plan to visualize the results by placing each variable on a graph against presence of heart disease (which will be on the y-axis), implementing any significant factors in each graph and tidying it up to make finding any patterns much easier."
 
 
 # Expected Outcome/Significance
