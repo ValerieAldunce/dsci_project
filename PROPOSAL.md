@@ -46,7 +46,7 @@ disease_testing <- testing(disease_split)
 ```
 
 Having the presence of heart disease be a binary factor will allow us to better visualise the data later on. 
-Spliting the data is helpful because it allows us to ...
+Spliting the data is necessary because the training data is what is used to build the classifier, and the testing data is what we are truing to predict.
 
 ```R
 #Using only training data, summarize the data in at least one table (this is exploratory data analysis). An example of a useful table could be one that reports the number of observations in each class, the means of the predictor variables you plan to use in your analysis and how many rows have missing data.
