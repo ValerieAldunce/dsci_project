@@ -106,5 +106,5 @@ What impact could such findings have?
 What future questions could this lead to?
 
 
-With the dataset we plan to use, we expect there to be a few limitations on how we can use the information. The data is very close together so it is very difficult to see any trends or patterns from how we have set up the data so far.
+Based on the three visualizations above it is hard to tell whether there is a strong correlation between these three predictors and the presence of heart disease in the patient. Observing the average age, blood pressure, and cholesterol level we do see that patients with heart disease had higher values in general than those without a diagnosis. Based on previous research on heart disease it is expected that evaluating these three predictors would help diagnose whether a patient has heart disease, and to test this we will examine using classification, how accurate a diagnosis prediction using these health factors of future patients would be. If we do find that these predictors accurately provide a diagnosis, then this could be a helpful way of determining a future patient’s likelihood of heart disease. A follow-up question could be, whether there other more accurate predictors that could do a better job of predicting a future patient’s diagnosis of heart disease.
 
