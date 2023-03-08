@@ -2,7 +2,7 @@
 
 
 # Introduction
-Heart disease is the second most common cause of death in Canada. Coronary artery disease is one of the most prevalent kind of heart disease and can result in a heart attack. It has been proven that lifestyle modifications and, in certain situations, medication, can significantly lower your chance for developing heart disease. In this analysis we will aim to answer the question: what factors can help us predict whether an individual will have heart disease? To answer this question we will be using a heart disease dataset that has information on 303 patients with 14 columns containing data about different medical information. The class we want to predict is wether or not heart disease is present in an individual based on evaluating three predictors: cholesterol levels, blood sugar levels and age, which are all known factors that effect the probability of a patient being diagnosed with heart disease.
+Heart disease is the second most common cause of death in Canada. Coronary artery disease is one of the most prevalent kind of heart disease and can result in a heart attack. It has been proven that lifestyle modifications and, in certain situations, medication, can significantly lower your chance for developing heart disease. In this analysis we will aim to answer the question: what factors can help us predict whether an individual will have heart disease? To answer this question we will be using a heart disease dataset that has information on 303 patients with 14 columns containing data about different medical information. The class we want to predict is whether or not heart disease is present in an individual based on evaluating three predictors: cholesterol levels, blood sugar levels and age, which are all known factors that affect the probability of a patient being diagnosed with heart disease.
 
 
 # Exploratory Data Analysis
@@ -16,8 +16,8 @@ heart_disease <- read.csv("https://archive.ics.uci.edu/ml/machine-learning-datab
     #rename columns
     names(heart_disease) <- c("age", "sex", "chest_pain", "blood_pressure", "cholesterol", "blood_sugar", "EKG", "heart_rate", "angina", "ST_depression", "ST_slope", "fluro", "thallium", "presence_of_disease")
 disease_data <- heart_disease |>
-    #make wether or not a patient has the diseaes a fct
-    mutate (disease_presence =as_factor(presence_of_disease))|>
+    #make whether or not a patient has the disease a fct
+    mutate (disease_presence = as_factor(presence_of_disease))|>
     #select the three predictors that we want to examine
     select (age, blood_pressure, cholesterol, disease_presence)
  #display the first 9 rows of the data
@@ -57,7 +57,7 @@ disease_summary <- disease_training |>
 disease_summary
 ```
 
-This summary of the data shows the mean age, blood pressure levels, and cholesterol levels of individuals where heart disease is absent (the 0 row) and where it is present (the 1 row), which allos us to compare the information and draw an idea about how these variables might play a role in increasing the risk of heart disease for an individual.
+This summary of the data shows the mean age, blood pressure levels, and cholesterol levels of individuals where heart disease is absent (row 0) and where it is present (row 1), which allows us to compare the information and draw an idea about how these variables might play a role in increasing the risk of heart disease for an individual.
 
 ```R
 #Using only training data, visualize the data with at least one plot relevant to the analysis you plan to do (this is exploratory data analysis). 
@@ -85,11 +85,11 @@ disease.cholesterol_plot <- ggplot(disease_training, aes(x=cholesterol, fill=dis
 disease.cholesterol_plot
 ```
 
-These three graphs help us to visulalise the distribution of patient data and allows us to compare the ages , cholesterol levels and blood sugar levels of individulas with and without a diagnosis for heart disease. 
+These three graphs help us to visualise the distribution of patient data and allows us to compare the ages, cholesterol levels and blood sugar levels of individulas with and without a diagnosis for heart disease. 
 
 
 # Method
-We will use the variables age, cholesterol level, and blood pressure level because they are all known factors in the likelihood of an individual to develope heart disease. The older a patient is the higher the risk of heart disease becomes especially above the age of 65. The higher a patients cholesterol levels, the likely it is that thier arteries can get damaged and cloged which can result in heart disease. Similarly, if patients have high blood sugar levels, they are more likely to have damaged blood vessels and nerves that control their heart, which increases the risk of heart disease. 
+We will use the variables age, cholesterol level, and blood pressure level because they are all known factors in the likelihood of an individual to develop heart disease. The older a patient is the higher the risk of heart disease becomes especially above the age of 65. The higher a patient's cholesterol levels, the likely it is that their arteries can get damaged and clogged which can result in heart disease. Similarly, if patients have high blood sugar levels, they are more likely to have damaged blood vessels and nerves that control their heart, which increases the risk of heart disease. 
 
 Sources: https://memorialhermann.org/services/specialties/heart-and-vascular/healthy-living/education/heart-disease-and-age , https://familyheart.org/cholesterol-is-key , https://www.cdc.gov/diabetes/library/features/diabetes-and-heart.html
 
@@ -97,10 +97,7 @@ Using the data from above that we have loaded into R, we can now conduct our ana
 
 To analyse this data we will preprocess the data and make it suitable for use in a classifier, so that we can use our observed data to make predictions. First we will ... 
 
-One way we will visualize the results ... 
-
-(Explain how you will conduct either your data analysis
-Describe at least one way that you will visualize the results)
+As stated above, we plan to visualize the results by placing each variable on a graph against presence of heart disease (which will be on the y-axis), implementing any significant factors in each graph and tidying it up to make finding any patterns much easier.
 
 
 # Expected Outcome/Significance
@@ -108,6 +105,6 @@ What do you expect to find?
 What impact could such findings have?
 What future questions could this lead to?
 
-```R
 
-```
+With the dataset we plan to use, we expect there to be a few limitations on how we can use the information. The data is very close together so it is very difficult to see any trends or patterns from how we have set up the data so far.
+
