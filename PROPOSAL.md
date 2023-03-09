@@ -2,7 +2,7 @@
 
 
 # Introduction
-Heart disease is the second most common cause of death in Canada. Coronary artery disease is one of the most prevalent kind of heart disease and can result in a heart attack. It has been proven that lifestyle modifications and, in certain situations, medication, can significantly lower your chance for developing heart disease. In this analysis we will aim to answer the question: what factors can help us predict whether an individual will have heart disease? To answer this question we will be using a heart disease dataset that has information on 303 patients with 14 columns containing data about different medical information. The class we want to predict is whether or not heart disease is present in an individual based on evaluating three predictors: cholesterol levels, blood sugar levels and age, which are all known factors that affect the probability of a patient being diagnosed with heart disease.
+Heart disease is the second most common cause of death in Canada and research shows that lifestyle modifications and medication, can significantly lower your chance of developing the disease. In this analysis, we will aim to answer the question: what factors can help us predict whether an individual will have heart disease? To answer this question, we will be using a heart disease dataset that has information on 303 patients with 14 columns containing data about different medical information. The class we want to predict is whether heart disease is present in an individual based on evaluating three predictors: cholesterol levels, blood pressure levels, and age, which are all known to affect the probability of a patient being diagnosed with heart disease.
 
 
 # Exploratory Data Analysis
@@ -25,8 +25,7 @@ head(disease_data, n = 9)
 
 ```
 
-We renamed the columns with names that we can understand and therfore manipulate easier.
-Then we selected only the four columns that we are interested in examining, cholesterol levels, blood sugar levels, age and presence of heart disease.
+We renamed the columns with names that we can understand, then selected the four columns that we are interested in examining, cholesterol levels, blood pressure levels, age and presence of heart disease.
 
 ```R
 #Clean and wrangle your data into a tidy format
@@ -45,8 +44,8 @@ disease_testing <- testing(disease_split)
   head(disease_testing, n = 3)
 ```
 
-Having the presence of heart disease be a binary factor will allow us to better visualise the data later on. 
-Spliting the data is necessary because the training data is what is used to build the classifier, and the testing data is what we are trying to predict.
+Having the presence of heart disease be a binary factor will allow us to better visualize the data later. 
+Splitting the data is necessary because the training data is what is used to build the classifier, and the testing data is what we are trying to predict.
 
 ```R
 #Using only training data, summarize the data in at least one table (this is exploratory data analysis). An example of a useful table could be one that reports the number of observations in each class, the means of the predictor variables you plan to use in your analysis and how many rows have missing data.
@@ -57,7 +56,7 @@ disease_summary <- disease_training |>
 disease_summary
 ```
 
-This summary of the data shows the mean age, blood pressure levels, and cholesterol levels of individuals where heart disease is absent (row 0) and where it is present (row 1), which allows us to compare the information and draw an idea about how these variables might play a role in increasing the risk of heart disease for an individual.
+This summary of the data shows the mean value of our predictors of individuals with heart disease (1) and without (0), allowing us to compare the values. 
 
 ```R
 #Using only training data, visualize the data with at least one plot relevant to the analysis you plan to do (this is exploratory data analysis). 
@@ -85,32 +84,23 @@ disease.cholesterol_plot <- ggplot(disease_training, aes(x=cholesterol, fill=dis
 disease.cholesterol_plot
 ```
 
-These three graphs help us to visualise the distribution of patient data and allows us to compare the ages, cholesterol levels and blood sugar levels of individulas with and without a diagnosis for heart disease. 
+These graphs visualize the distribution of patient data and compare the ages, cholesterol levels, and blood pressure levels of individuals with and without heart disease.
 
 
 # Method
-We will use the variables age, cholesterol level, and blood pressure level because they are all known factors in the likelihood of an individual to develop heart disease. The older a patient is the higher the risk of heart disease becomes especially above the age of 65. The higher a patient's cholesterol levels, the likely it is that their arteries can get damaged and clogged which can result in heart disease. Similarly, if patients have high blood sugar levels, they are more likely to have damaged blood vessels and nerves that control their heart, which increases the risk of heart disease. 
+Age, cholesterol level, and blood pressure level will be our predictors because they are known factors in the development of heart disease. The older a patient is the higher the risk of heart disease becomes. The higher a patient's cholesterol or blood pressure levels, the more likely it is that their arteries or blood vessels can get damaged and clogged, which increases the risk of heart disease. 
 
-Sources: https://memorialhermann.org/services/specialties/heart-and-vascular/healthy-living/education/heart-disease-and-age , https://familyheart.org/cholesterol-is-key , https://www.cdc.gov/diabetes/library/features/diabetes-and-heart.html
+To analyze this data we will perform classification, following these steps:
+- Create a K-nearest neighbor classifier with our three predictors and check the accuracy of the K-nearest neighbor found using vfold_cv.
+- Create a model using the K-nearest neighbor to predict the presence or absence of heart disease in the patient and check for accuracy again, this time using the predict function and the testing data. 
+- Create a visualization of our model, using scatterplots to visualize the relationship between two predictors at a time to visualize trends in predictors and their effect on the final diagnosis for a given patient. 
 
-To analyse this data we will perform classification, following these steps:
-- Create a K-nearest neighbor classifier with our three predictors.
-- Check the accuracy of the K-nearest neighbor found using vfold_cv.
-- Create a model using the K-nearest neighbor to predict the presence or absence of heart disease in the patient. 
-- Check for accuracy againg, this time using the predict function and the testing data. 
-- Create a visualisation of our model.  
-
-(Explain how you will conduct either your data analysis
-Describe at least one way that you will visualize the results)
-
-"Using the data from above that we have loaded into R, we can now conduct our analyses by forming 3 main plots: age v.s. presence of heart disease, cholesterol levels v.s. presence of heart disease, and blood sugar levels v.s. presence of heart disease. These plots will have to be separated into something such as facet grids to factor in variables such as sex, whether or not the patient has angina, thalach (maximum heart rate achieved), etc. Using the data, we will form scatterplots to give us a clear visualization of any common trends. As stated above, we plan to visualize the results by placing each variable on a graph against presence of heart disease (which will be on the y-axis), implementing any significant factors in each graph and tidying it up to make finding any patterns much easier."
 
 
 # Expected Outcome/Significance
-What do you expect to find?
-What impact could such findings have?
-What future questions could this lead to?
 
 
-Based on the three visualizations above it is hard to tell whether there is a strong correlation between these three predictors and the presence of heart disease in the patient. Observing the average age, blood pressure, and cholesterol level we do see that patients with heart disease had higher values in general than those without a diagnosis. Based on previous research on heart disease it is expected that evaluating these three predictors would help diagnose whether a patient has heart disease, and to test this we will examine using classification, how accurate a diagnosis prediction using these health factors of future patients would be. If we do find that these predictors accurately provide a diagnosis, then this could be a helpful way of determining a future patient’s likelihood of heart disease. A follow-up question could be, whether there other more accurate predictors that could do a better job of predicting a future patient’s diagnosis of heart disease.
+Based on the visualizations above it is hard to tell whether there is a strong correlation between these three predictors and the presence of heart disease. Observing the average of the predictors we do see that patients with heart disease had higher values in general than those without a diagnosis. Based on previous research on heart disease it is expected that evaluating these three predictors would help diagnose whether a patient has heart disease. This project will test the accuracy of a diagnosis prediction using these health factors of future patients. If we do find that the model accurately provides a diagnosis, then this could be helpful for predicting future patient diagnoses. A follow-up question could be, whether there other more accurate predictors that could do a better job of predicting heart disease in a future patient.
 
+
+Sources: https://memorialhermann.org/services/specialties/heart-and-vascular/healthy-living/education/heart-disease-and-age , https://familyheart.org/cholesterol-is-key , https://www.cdc.gov/diabetes/library/features/diabetes-and-heart.html
